@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSpace – Smart Habit & Mood Companion</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js for mood history chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>MindSpace – Mood & Habit Tracker</h1>
+    <!-- Dark mode toggle switch -->
+    <label class="theme-toggle">
+      <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode">
+      <span class="toggle-slider"></span>
+      Dark Mode
+    </label>
+  </header>
+
+  <!-- Mood tracker section -->
+  <section id="mood-tracker">
+    <h2>How are you today?</h2>
+    <div class="mood-options">
+      <!-- Emoji buttons for mood selection -->
+      <button class="mood-btn" data-mood="1" aria-label="Very Sad">😞</button>
+      <button class="mood-btn" data-mood="2" aria-label="Sad">😐</button>
+      <button class="mood-btn" data-mood="3" aria-label="Happy">😊</button>
+      <button class="mood-btn" data-mood="4" aria-label="Very Happy">😃</button>
+    </div>
+    <textarea id="mood-note" placeholder="Write a brief note..." aria-label="Daily note"></textarea>
+    <button id="saveMoodBtn">Save Mood</button>
+  </section>
+
+  <!-- Weekly mood history chart -->
+  <section id="mood-history">
+    <h2>Last 7 Days Mood</h2>
+    <canvas id="moodChart"></canvas>
+  </section>
+
+  <!-- AI chatbot assistant -->
+  <section id="ai-chat">
+    <h2>Chat with AI Assistant</h2>
+    <div id="chatWindow" class="chat-window"></div>
+    <input type="text" id="userInput" placeholder="Ask me something..." aria-label="Chat input">
+    <button id="sendChatBtn">Send</button>
+    <p class="note">*This uses OpenAI. Enter your API key in the script and enable CORS to use it.</p>
+  </section>
+  
+
+  <!-- Daily motivational tip -->
+  <section id="daily-tip">
+    <h2>🌟 Today's Tip</h2>
+    <p id="tipText">Loading...</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
